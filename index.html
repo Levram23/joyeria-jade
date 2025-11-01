@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jade - Joyería de Lujo | Anillos de Compromiso</title>
+  <meta name="description" content="Jhade - 40 años de tradición en orfebrería. Anillos de compromiso con diamantes certificados GIA y diseños personalizados." />
+  <meta property="og:title" content="Jhade - Joyería de Lujo" />
+  <meta property="og:description" content="Anillos de compromiso y joyería fina con certificación GIA. Diseño artesanal y pedidos personalizados." />
+  <meta property="og:type" content="website" />
+  <!-- Replace with a real og:image when available -->
+  <meta property="og:image" content="/Joyeria-Jhade/img/frente.jpg" />
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --color-cream: #EDEDE9;
+      --color-ivory: #F5EBE0;
+      --color-warm-gray: #D6CCC2;
+      --color-beige: #E3D5CA;
+      --color-taupe: #D5BDAF;
+      --text-dark: #222222;
+      --text-muted: #6B6B6B;
+      --accent: var(--color-taupe);
+      --shadow-soft: 0 8px 24px rgba(16,16,16,0.08);
+      --shadow-strong: 0 12px 36px rgba(16,16,16,0.12);
+      --radius-lg: 1rem;
+    }
+
+    /* Base */
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background: var(--color-cream); margin:0; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+    /* Utilities */
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+    .hover-lift { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; }
+    .hover-lift:hover { transform: translateY(-6px); box-shadow: var(--shadow-strong); }
+
+    /* Hero overlay gradient */
+    .gradient-overlay {
+      background: linear-gradient(135deg, rgba(245,235,224,0.95) 0%, rgba(214,204,194,0.9) 100%);
+    }
+
+    /* Improve color contrast for text on soft backgrounds */
+    .text-contrast { color: #2f2f2f; }
+
+    /* Card image treatment */
+    .card-img {
+      width: 100%;
+      height: 16rem;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 1rem;
+    }
+
+    /* Make sure hero image scales nicely */
+    .hero-media { max-width: 420px; width:100%; height:auto; border-radius: 1rem; box-shadow: var(--shadow-strong); }
+
+    /* Small screens adjustments */
+    @media (max-width: 640px){
+      .hero-media { max-width: 320px; margin: 0 auto 1.5rem; display:block; }
+      .hero-title { font-size: 1.75rem; line-height:1.05; }
+      .py-responsive { padding-top: 3rem; padding-bottom: 3rem; }
+    }
+  </style>
+</head>
+<body class="h-full bg-cream text-contrast">
+
+  <header class="border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded-lg bg-beige flex items-center justify-center shadow-sm">
+          <span class="font-playfair text-2xl">J</span>
+        </div>
+        <div>
+          <a href="#" class="font-playfair text-xl text-contrast">Jade</a>
+          <p class="text-xs text-muted">40 Años de Tradición</p>
+        </div>
+      </div>
+      <nav aria-label="Principal" class="hidden md:flex items-center space-x-6">
+        <a href="#colecciones" class="text-sm hover:underline">Colecciones</a>
+        <a href="#servicios" class="text-sm hover:underline">Servicios</a>
+        <a href="#contacto" class="text-sm hover:underline">Contacto</a>
+        <!-- CTA visible on desktop -->
+        <a href="https://wa.me/51960920199?text=Hola%20Jade%20%F0%9F%92%8D%2C%20quiero%20informaci%C3%B3n%20sobre%20anillos%20de%20compromiso" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="ml-4 bg-taupe px-4 py-2 rounded-lg text-white hover-lift" style="background:var(--accent); color:white; box-shadow:var(--shadow-soft);">Contáctanos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-ivory py-20">
+      <div class="absolute inset-0 gradient-overlay" aria-hidden="true"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-responsive">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Text -->
+          <div class="text-center lg:text-left">
+            <h1 id="hero-title" class="font-playfair font-bold text-4xl md:text-5xl lg:text-6xl mb-6 hero-title leading-tight">Joyería Jade: 40 Años de Tradición y Certificación GIA</h1>
+            <p class="text-lg md:text-xl text-muted mb-8 font-light max-w-2xl mx-auto lg:mx-0">Creamos momentos eternos con diamantes certificados y la maestría de generaciones de orfebres especializados.</p>
+
+            <!-- CTA: link to WhatsApp with prefilled message -->
+            <a id="hero-cta" href="https://wa.me/51960920199?text=Hola%20Jade%20%F0%9F%92%8D%2C%20quiero%20informaci%C3%B3n%20sobre%20anillos%20de%20compromiso" target="_blank" rel="noopener noreferrer" aria-label="Ver Anillos de Compromiso en WhatsApp" class="inline-block bg-taupe hover:bg-opacity-90 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 hover-lift shadow-lg" style="background:var(--accent); color:white;">Ver Anillos de Compromiso</a>
+          </div>
+
+          <!-- Media: replaced svg by real image -->
+          <div class="flex justify-center items-center">
+            <div class="relative">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/frente.jpg" alt="Anillo de compromiso - vista frontal" class="hero-media" loading="lazy">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USP & Confianza -->
+    <section class="py-16 bg-cream">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="text-center p-6 bg-white rounded-lg shadow-md hover-lift">
+            <div class="w-16 h-16 bg-beige rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-2xl">⚒️</span></div>
+            <h3 id="service-1" class="font-playfair text-lg font-semibold mb-2">Orfebres 40+ Años</h3>
+            <p class="text-sm text-gray-600">Maestría artesanal transmitida por generaciones</p>
+          </div>
+
+          <div class="text-center p-6 bg-white rounded-lg shadow-md hover-lift">
+            <div class="w-16 h-16 bg-beige rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-2xl">💎</span></div>
+            <h3 id="service-2" class="font-playfair text-lg font-semibold mb-2">GIA Certified Stones</h3>
+            <p class="text-sm text-gray-600">Diamantes con certificación internacional</p>
+          </div>
+
+          <div class="text-center p-6 bg-white rounded-lg shadow-md hover-lift">
+            <div class="w-16 h-16 bg-beige rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-2xl">🏆</span></div>
+            <h3 id="service-3" class="font-playfair text-lg font-semibold mb-2">Oro 18K &amp; Diamantes</h3>
+            <p class="text-sm text-gray-600">Materiales de la más alta calidad</p>
+          </div>
+
+          <div class="text-center p-6 bg-white rounded-lg shadow-md hover-lift">
+            <div class="w-16 h-16 bg-beige rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-2xl">✨</span></div>
+            <h3 id="service-4" class="font-playfair text-lg font-semibold mb-2">Pedidos Personalizados</h3>
+            <p class="text-sm text-gray-600">Diseños únicos para momentos especiales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo Enfocado -->
+    <section id="colecciones" class="py-20 bg-ivory">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="font-playfair text-4xl font-bold text-dark mb-4">Nuestras Colecciones</h2>
+          <p class="text-xl text-gray-700 max-w-2xl mx-auto">Descubre la perfecta combinación entre tradición y elegancia moderna</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Each card wrapped with anchor to WhatsApp -->
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%20%F0%9F%92%8D%2C%20quiero%20ver%20la%20colecci%C3%B3n%20de%20Compromiso" target="_blank" rel="noopener noreferrer" aria-label="Ver colección Compromiso en WhatsApp" class="group hover:no-underline">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/compromiso.jpg" alt="Colección Compromiso - Jhade" class="card-img">
+              <div class="p-6">
+                <h4 class="font-playfair text-lg font-semibold mb-2">Colección de Compromiso</h4>
+                <p class="text-gray-600 text-sm">Anillos únicos para el momento más especial</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%2C%20quiero%20ver%20joyas%20en%20Plata%20y%20Acero" target="_blank" rel="noopener noreferrer" aria-label="Ver colección Plata y Acero en WhatsApp" class="group hover:no-underline">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/plata.jpg" alt="Joyas en Plata y Acero - Jhade" class="card-img">
+              <div class="p-6">
+                <h4 class="font-playfair text-lg font-semibold mb-2">Joyas en Plata/Acero</h4>
+                <p class="text-gray-600 text-sm">Elegancia accesible sin comprometer calidad</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%2C%20quiero%20ver%20la%20colecci%C3%B3n%20para%20Hombres" target="_blank" rel="noopener noreferrer" aria-label="Ver colección Hombre en WhatsApp" class="group hover:no-underline">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/hombre.jpg" alt="Colección para Hombre - Jhade" class="card-img">
+              <div class="p-6">
+                <h4 class="font-playfair text-lg font-semibold mb-2">Joyas para Hombre</h4>
+                <p class="text-gray-600 text-sm">Diseños masculinos de carácter distintivo</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%2C%20quiero%20ver%20la%20colecci%C3%B3n%20Infantil" target="_blank" rel="noopener noreferrer" aria-label="Ver colección Infantil en WhatsApp" class="group hover:no-underline">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/infantil.jpg" alt="Colección Infantil - Jhade" class="card-img">
+              <div class="p-6">
+                <h4 class="font-playfair text-lg font-semibold mb-2">Colección Infantil</h4>
+                <p class="text-gray-600 text-sm">Joyas delicadas para los más pequeños</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios de Valor -->
+    <section id="servicios" class="py-16 bg-warm-gray">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="font-playfair text-4xl font-bold text-dark mb-4">Servicios Especializados</h2>
+          <p class="text-xl text-gray-700 max-w-2xl mx-auto">Mantenimiento profesional y servicios de valor agregado</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%2C%20necesito%20informaci%C3%B3n%20sobre%20mantenimiento" target="_blank" rel="noopener noreferrer" aria-label="Mantenimiento en WhatsApp">
+            <div class="bg-white rounded-lg p-8 text-center hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/mantenimiento.jpg" alt="Mantenimiento de joyas" class="w-full h-40 object-cover rounded-lg mb-6">
+              <h3 class="font-playfair text-xl font-semibold mb-4">Mantenimiento</h3>
+              <p class="text-gray-600 mb-4">Limpieza, pulido y restauración profesional de sus joyas</p>
+              <ul class="text-sm text-gray-500 space-y-1">
+                <li>• Limpieza ultrasónica</li>
+                <li>• Pulido profesional</li>
+                <li>• Reparaciones menores</li>
+              </ul>
+            </div>
+          </a>
+
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%2C%20quiero%20informaci%C3%B3n%20sobre%20grabaciones%20l%C3%A1ser" target="_blank" rel="noopener noreferrer" aria-label="Grabaciones Láser en WhatsApp">
+            <div class="bg-white rounded-lg p-8 text-center hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/laser.jpg" alt="Grabaciones láser" class="w-full h-40 object-cover rounded-lg mb-6">
+              <h3 class="font-playfair text-xl font-semibold mb-4">Grabaciones Láser</h3>
+              <p class="text-gray-600 mb-4">Personalización con tecnología de precisión láser</p>
+              <ul class="text-sm text-gray-500 space-y-1">
+                <li>• Nombres y fechas</li>
+                <li>• Diseños personalizados</li>
+                <li>• Alta precisión</li>
+              </ul>
+            </div>
+          </a>
+
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%2C%20estoy%20interesado%20en%20vender%20mi%20oro" target="_blank" rel="noopener noreferrer" aria-label="Compra de Oro en WhatsApp">
+            <div class="bg-white rounded-lg p-8 text-center hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/compra-oro.jpg" alt="Compra de oro" class="w-full h-40 object-cover rounded-lg mb-6">
+              <h3 class="font-playfair text-xl font-semibold mb-4">Compra de Oro</h3>
+              <p class="text-gray-600 mb-4">Evaluación y compra de oro al mejor precio del mercado</p>
+              <ul class="text-sm text-gray-500 space-y-1">
+                <li>• Evaluación gratuita</li>
+                <li>• Precios competitivos</li>
+                <li>• Transacciones seguras</li>
+              </ul>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Regalos y Complementos -->
+    <section class="py-12 bg-cream">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="font-playfair text-2xl font-semibold text-dark mb-2">Regalos y Complementos</h2>
+          <p class="text-gray-600">Detalles especiales para acompañar tus joyas</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%2C%20quiero%20ver%20los%20relojes" target="_blank" rel="noopener noreferrer" aria-label="Relojes en WhatsApp">
+            <div class="bg-white rounded-lg p-6 flex items-center space-x-4 hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/relojes.jpg" alt="Relojes de lujo" class="w-24 h-24 object-cover rounded-lg">
+              <div>
+                <h3 class="font-playfair text-lg font-semibold">Relojes</h3>
+                <p class="text-gray-600 text-sm">Colección selecta de relojes de lujo</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/51960920199?text=Hola%20Jade%2C%20quiero%20ver%20accesorios" target="_blank" rel="noopener noreferrer" aria-label="Accesorios en WhatsApp">
+            <div class="bg-white rounded-lg p-6 flex items-center space-x-4 hover-lift">
+              <img src="C:\Users\A\Documents\Joyeria-Jhade\img/peluches.jpg" alt="Accesorios y regalos" class="w-24 h-24 object-cover rounded-lg">
+              <div>
+                <h3 class="font-playfair text-lg font-semibold">Accesorios</h3>
+                <p class="text-gray-600 text-sm">Peluches y detalles para ocasiones especiales</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contacto" class="bg-stone-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-playfair text-2xl font-bold text-amber-400 mb-4">Joyería Jade</h3>
+                    <p class="text-stone-300 mb-4">40 años creando momentos únicos con la más alta calidad y certificación GIA.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-stone-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contacto</h4>
+                    <div class="space-y-2 text-stone-300">
+                        <p><i class="fas fa-phone mr-2"></i> 942 684 780 - 991 025 869</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Jr. Cuzco 685 Int. 2053 - 2054</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Horarios</h4>
+                    <div class="space-y-2 text-stone-300">
+                        <p>Lunes - Sabados: 10:00 AM - 8:00 PM</p>
+                        
+                    </div>
+                    <a href="https://maps.app.goo.gl/P78aH88wT8wzdvTm6" target="_blank" rel="noopener noreferrer">
+                        <button class="mt-4 bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        Ver en Google Maps
+                    </button>
+                    </a>
+
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-700 mt-8 pt-8 text-center text-stone-400">
+                <p>© 2024 Joyería Jade. Todos los derechos reservados. | 40 años de tradición familiar</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- Scripts (defer non-essential) -->
+  <script defer src="/_sdk/element_sdk.js"></script>
+  <script defer src="/_sdk/data_sdk.js"></script>
+
+  <script>
+    // Default config (kept for Element SDK compatibility)
+    const defaultConfig = {
+      hero_title: "Joyería Jhade: 40 Años de Tradición y Certificación GIA",
+      hero_cta: "Ver Anillos de Compromiso",
+      service_1: "Orfebres 40+ Años",
+      service_2: "GIA Certified Stones",
+      service_3: "Oro 18K & Diamantes",
+      service_4: "Pedidos Personalizados",
+      background_color: "#EDEDE9",
+      surface_color: "#F5EBE0",
+      text_color: "#4A4A4A",
+      primary_action_color: "#D5BDAF",
+      secondary_surface_color: "#D6CCC2",
+      font_family: "Playfair Display",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      // Apply simple dynamic changes if the SDK triggers them
+      if (!config) return;
+      const heroTitle = document.getElementById('hero-title');
+      if (heroTitle && config.hero_title) heroTitle.textContent = config.hero_title;
+      const heroCta = document.getElementById('hero-cta');
+      if (heroCta && config.hero_cta) heroCta.textContent = config.hero_cta;
+      // Colors (simple)
+      if (config.background_color) document.body.style.backgroundColor = config.background_color;
+      if (config.text_color) document.body.style.color = config.text_color;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {}
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {}
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["hero_title", config.hero_title || defaultConfig.hero_title],
+        ["hero_cta", config.hero_cta || defaultConfig.hero_cta],
+        ["service_1", config.service_1 || defaultConfig.service_1],
+        ["service_2", config.service_2 || defaultConfig.service_2],
+        ["service_3", config.service_3 || defaultConfig.service_3],
+        ["service_4", config.service_4 || defaultConfig.service_4]
+      ]);
+    }
+
+    // Initialize Element SDK if present
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Small accessibility improvement: ensure anchor-cards get keyboard focus styles
+    document.addEventListener('DOMContentLoaded', function() {
+      const anchors = document.querySelectorAll('a.group');
+      anchors.forEach(a => {
+        a.setAttribute('tabindex', '0');
+      });
+    });
+  </script>
+</body>
+</html>
